@@ -9,4 +9,13 @@
     <string name="hint_password">Password</string>
     <string name="hint_button_ingresar">Ingresar</string>
 
+    <!-- Register Screen -->
+    <string name="hint_name_register">Name</string>
+    <string name="hint_lastName_register">Last Name</string>
+    <string name="hint_email_register">Email</string>
+    <string name="hint_phone_register">Phone</string>
+    <string name="hint_pass_register">Password</string>
+    <string name="hint_confirm_pass_register">Confirm Password</string>
+    <string name="hint_button_register">Register</string>
+
 </resources>
