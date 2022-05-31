@@ -3,12 +3,13 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <string name="go_to_register">Register</string>
+
 
     <!-- Login Screen -->
     <string name="hint_email">Email</string>
     <string name="hint_password">Password</string>
     <string name="hint_button_ingresar">Ingresar</string>
+    <string name="go_to_register">Register</string>
 
     <!-- Register Screen -->
     <string name="hint_name_register">Name</string>
@@ -18,5 +19,6 @@
     <string name="hint_pass_register">Password</string>
     <string name="hint_confirm_pass_register">Confirm Password</string>
     <string name="hint_button_register">Register</string>
+    <string name="hint_button_goToLogin">¿Ya tienes una cuenta? Inicia sesión</string>
 
 </resources>

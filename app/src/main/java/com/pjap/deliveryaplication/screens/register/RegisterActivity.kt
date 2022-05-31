@@ -16,7 +16,7 @@ class RegisterActivity: AppCompatActivity() {
         setContentView(registerBinding.root)
         supportActionBar?.hide()
         registerBinding.buttonRegister.setOnClickListener { goToLogin() }
-
+        registerBinding.buttonToLogin.setOnClickListener { goToLogin() }
     }
 
     private fun goToLogin() {
