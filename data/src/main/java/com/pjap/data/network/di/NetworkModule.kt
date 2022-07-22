@@ -4,6 +4,7 @@ import android.content.Context
 import com.pjap.data.BuildConfig
 import com.pjap.data.network.ApiConfig
 import com.pjap.data.network.repository.LoginRepository
+import com.pjap.data.network.repository.UserRepository
 import com.pjap.data.network.utils.AUTHORIZATION
 import com.pjap.data.network.utils.BASE_URL
 import com.pjap.data.network.utils.PLATFORM
@@ -11,6 +12,7 @@ import com.pjap.data.network.utils.TIMEOUT
 import com.pjap.data.preference.manager.PreferencesManager
 import com.pjap.data.preference.utils.PREFERENCE_TOKEN
 import com.pjap.domain.repository.LoginRepositoryNetwork
+import com.pjap.domain.repository.UserRepositoryNetwork
 import okhttp3.Cache
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -21,7 +23,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-
 val networkModule = module {
     single { providerHttpLoggingInterceptor() }
     single { providerCache(get()) }
@@ -31,6 +32,7 @@ val networkModule = module {
     single { providerApi(get()) }
 
     single<LoginRepositoryNetwork> { LoginRepository(get()) }
+    single<UserRepositoryNetwork> {UserRepository(get())}
 }
 
 fun providerApi(retrofit: Retrofit): ApiConfig {

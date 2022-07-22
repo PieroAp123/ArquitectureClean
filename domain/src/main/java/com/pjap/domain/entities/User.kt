@@ -1,5 +1,8 @@
 package com.pjap.domain.entities
 
 data class User(
-    var user: String? = null
+    val email: String,
+    val name: String,
+    val lastname: String,
+    val phone: String
 )

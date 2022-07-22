@@ -8,7 +8,7 @@ class UserPreference(private val sharedPreferenceManager: PreferencesManager) :
     LoginRepositoryPreference {
 
     override fun saveUser(user: User) {
-        sharedPreferenceManager.setValue("USERNAME", user.user!!)
+        sharedPreferenceManager.setValue("USERNAME", user.name)
     }
 
 
@@ -20,7 +20,7 @@ class UserPreference(private val sharedPreferenceManager: PreferencesManager) :
 
     override fun getUser(): User {
         val userName = sharedPreferenceManager.getString("USERNAME")
-        return User(userName)
+        return User("", userName, "","")
     }
 
     override fun isLogin(): Boolean {
