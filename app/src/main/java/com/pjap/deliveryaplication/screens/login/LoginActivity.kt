@@ -32,17 +32,12 @@ class LoginActivity: AppCompatActivity() {
         loginViewModel.userLoadingLiveData.observe(this) {
             Log.e("LoginActivity", "$it") }
         loginViewModel.errorLiveData.observe(this) {
-            //textInputLayout.error = "strUserRut"
             showError(it)
-            //Toast.makeText(this,"error de logeo",Toast.LENGTH_SHORT).show()
         }
         loginViewModel.usersLiveData.observe(this) {
-            Log.e("LoginActivity", "$it")
-            Log.e("GAAA", "$it")
-
+            Log.d("LoginActivity", "$it")
         }
         loginViewModel.getAllUsers()
-
     }
 
     private fun showError(error: CustomError) {

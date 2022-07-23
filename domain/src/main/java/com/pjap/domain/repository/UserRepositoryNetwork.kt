@@ -5,5 +5,5 @@ import com.pjap.domain.entities.User
 import com.pjap.domain.entities.Users
 
 interface UserRepositoryNetwork {
-    fun getUser(): CustomResult<User>
+    fun getUser(): CustomResult<List<User>>
 }

@@ -3,7 +3,7 @@ package com.pjap.data.network.entities
 import com.google.gson.annotations.SerializedName
 import com.pjap.domain.entities.User
 
-data class UserDataResponse(
+data class User(
     @field:SerializedName("email")
     val email: String,
     @field:SerializedName("name")

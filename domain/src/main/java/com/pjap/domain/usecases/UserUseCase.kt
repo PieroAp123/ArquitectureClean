@@ -8,7 +8,7 @@ import com.pjap.domain.repository.UserRepositoryNetwork
 class UserUseCase(
     private val userRepositoryNetwork: UserRepositoryNetwork
 ) {
-     fun getUser(): CustomResult<User> {
+     fun getUser(): CustomResult<List<User>> {
         return userRepositoryNetwork.getUser()
      }
 }

@@ -7,52 +7,17 @@ import com.pjap.domain.entities.Users
 
 data class UserResponse (
     @field:SerializedName("users")
-    val users: List<UserDataResponse>
+    val users: List<User>
 )  {
     companion object {
-        fun toUser(response: UserResponse?): User {
+        fun toUser(response: UserResponse?): List<User> {
             Log.e("Respuesta",response.toString())
+            val listUser = response?.users
             if (response!!.users.isNotEmpty()){
-                response.users.forEach {
-                    return User(it.email, it.name, it.lastname, it.phone)
-                }
+                return listUser!!
             }
-            return User("Juan Perez", "", "", "")
+            return listUser!!
         }
+
     }
 }
-/*{
-    companion object {
-        fun toUser(response: UserResponse?): User {
-            Log.e("Respuesta",response.toString())
-            if (response!!.users.isNotEmpty()){
-                response.users.forEach {
-                    return User(it.email, it.name, it.lastname, it.phone)
-                }
-            }
-            return User("Juan Perez", "", "", "")
-        }
-    }
-}*/ /*{
-    companion object {
-        fun toUser(response: UserResponse?): User {
-            Log.e("Respuesta",response.toString())
-            if (response!!.users.isNotEmpty()){
-                response.users.forEach {
-                    return User(it.email, it.name, it.lastname, it.phone)
-                }
-            }
-            return User("Juan Perez", "", "", "")
-        }
-    }
-}*/
-/*{
-    companion object{
-        fun toUser(response: List<UserResponse>?): User {
-            if (response!!.isNotEmpty()) {
-                listOf<User>()
-            }
-            return listOf<User>()
-        }
-    }
-}*/

@@ -3,7 +3,6 @@ package com.pjap.deliveryaplication.screens.login
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.pjap.data.network.entities.UserDataResponse
 import com.pjap.data.network.entities.UserResponse
 import com.pjap.deliveryaplication.utils.DispatcherProvider
 import com.pjap.domain.entities.CustomError
@@ -24,7 +23,7 @@ class LoginViewModel(
 
     val userLoadingLiveData = MutableLiveData<Boolean>()
     val errorLiveData = MutableLiveData<CustomError>()
-    val usersLiveData = MutableLiveData<User>()
+    val usersLiveData = MutableLiveData<List<User>>()
     lateinit var listUser: List<UserResponse>
 
     @OptIn(DelicateCoroutinesApi::class)
@@ -37,7 +36,6 @@ class LoginViewModel(
             when (val user = userUseCase.getUser()) {
                 is CustomResult.OnSuccess -> {
                     usersLiveData.postValue(user.data)
-                    Log.e("logUser", user.toString())
                 }
                 is CustomResult.OnError -> {
                     errorLiveData.postValue(user.error)
