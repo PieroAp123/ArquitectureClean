@@ -1,6 +1,5 @@
 package com.pjap.deliveryaplication.screens.login
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.pjap.data.network.entities.UserResponse
@@ -8,7 +7,6 @@ import com.pjap.deliveryaplication.utils.DispatcherProvider
 import com.pjap.domain.entities.CustomError
 import com.pjap.domain.entities.CustomResult
 import com.pjap.domain.entities.User
-import com.pjap.domain.entities.Users
 import com.pjap.domain.extensions.toError
 import com.pjap.domain.usecases.UserUseCase
 import kotlinx.coroutines.CoroutineExceptionHandler

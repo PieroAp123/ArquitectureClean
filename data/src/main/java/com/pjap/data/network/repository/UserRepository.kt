@@ -5,7 +5,6 @@ import com.pjap.data.network.entities.UserResponse
 import com.pjap.domain.entities.CustomResult
 import com.pjap.domain.entities.HttpError
 import com.pjap.domain.entities.User
-import com.pjap.domain.entities.Users
 import com.pjap.domain.repository.UserRepositoryNetwork
 
 class UserRepository(private val apiConfig: ApiConfig): UserRepositoryNetwork {

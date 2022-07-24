@@ -3,7 +3,6 @@ package com.pjap.data.network.entities
 import android.util.Log
 import com.google.gson.annotations.SerializedName
 import com.pjap.domain.entities.User
-import com.pjap.domain.entities.Users
 
 data class UserResponse (
     @field:SerializedName("users")

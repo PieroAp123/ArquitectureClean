@@ -4,6 +4,7 @@ import android.content.Context
 import com.pjap.data.BuildConfig
 import com.pjap.data.network.ApiConfig
 import com.pjap.data.network.repository.LoginRepository
+import com.pjap.data.network.repository.RegisterRepository
 import com.pjap.data.network.repository.UserRepository
 import com.pjap.data.network.utils.AUTHORIZATION
 import com.pjap.data.network.utils.BASE_URL
@@ -12,6 +13,7 @@ import com.pjap.data.network.utils.TIMEOUT
 import com.pjap.data.preference.manager.PreferencesManager
 import com.pjap.data.preference.utils.PREFERENCE_TOKEN
 import com.pjap.domain.repository.LoginRepositoryNetwork
+import com.pjap.domain.repository.RegisterRepositoryNetwork
 import com.pjap.domain.repository.UserRepositoryNetwork
 import okhttp3.Cache
 import okhttp3.Interceptor
@@ -33,6 +35,7 @@ val networkModule = module {
 
     single<LoginRepositoryNetwork> { LoginRepository(get()) }
     single<UserRepositoryNetwork> {UserRepository(get())}
+    single<RegisterRepositoryNetwork> {RegisterRepository(get())}
 }
 
 fun providerApi(retrofit: Retrofit): ApiConfig {
