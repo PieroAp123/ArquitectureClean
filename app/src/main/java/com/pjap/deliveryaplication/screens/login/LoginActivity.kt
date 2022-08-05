@@ -24,18 +24,24 @@ class LoginActivity: AppCompatActivity() {
         setContentView(loginBinding.root)
         supportActionBar?.hide()
         iniObservers()
-        loginBinding.buttonLogin.setOnClickListener { goToMaiActivity() }
+        loginBinding.buttonLogin.setOnClickListener {
+            loginViewModel.doLogin(loginBinding.editTextEmail.text.toString(), loginBinding.editTextPassword.text.toString())
+             }
         loginBinding.formRegister.setOnClickListener {  goToRegister() }
     }
 
     private fun iniObservers() {
-        loginViewModel.userLoadingLiveData.observe(this) {
+        loginViewModel.loadingLiveData.observe(this) {
             Log.e("LoginActivity", "$it") }
         loginViewModel.errorLiveData.observe(this) {
             showError(it)
         }
         loginViewModel.usersLiveData.observe(this) {
             Log.d("LoginActivity", "$it")
+        }
+        loginViewModel.loginLiveData.observe(this) {
+            Log.d("LoginDoLogin", "$it")
+            goToMaiActivity()
         }
         loginViewModel.getAllUsers()
     }

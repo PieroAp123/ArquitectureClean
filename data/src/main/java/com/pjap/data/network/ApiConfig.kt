@@ -12,7 +12,7 @@ import retrofit2.http.POST
 
 interface ApiConfig {
     @Headers("Content-Type: application/json")
-    @POST("api/users/getAll")
+    @POST("login")
     fun doLogin(@Body params: RequestBody): Call<LoginResponse>
 
     @GET("getAll")
